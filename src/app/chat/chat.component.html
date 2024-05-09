@@ -1,0 +1,13 @@
+<div class="chat-container">
+    @if(loading) {
+    <div class="loading-indicator">
+      Loading...
+    </div>}
+    @else {
+    <div *ngFor="let message of messages" class="message">
+      <span *ngIf="message.sender === 'user'" class="user-message">{{ message.content }}</span>
+      <span *ngIf="message.sender === 'chatbot'" class="chatbot-message">{{ message.content }}</span>
+    </div>
+    <input type="text" [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Type your message...">
+}
+  </div>

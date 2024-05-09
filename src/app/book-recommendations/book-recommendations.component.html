@@ -1,0 +1,23 @@
+<div *ngIf="recommendations.length > 0; else noBooks">
+  <h2>Book Recommendations</h2>
+  <ul>
+    <li *ngFor="let book of recommendations">
+      <div>
+        <strong>Title:</strong> {{ book.title }}
+      </div>
+      <div>
+        <strong>Author:</strong> {{ book.author }}
+      </div>
+      <div>
+        <strong>Page Count:</strong> {{ book.pageCount }}
+      </div>
+      <div>
+        <strong>Publication Date:</strong> {{ book.publishedDate }}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noBooks>
+  <p>No book recommendations available.</p>
+</ng-template>
